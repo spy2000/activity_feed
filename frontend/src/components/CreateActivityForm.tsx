@@ -67,14 +67,14 @@ export default function CreateActivityForm({
       style={{ display: "flex", flexDirection: "column", gap: 12 }}
     >
       <input
-        placeholder="Type (e.g. ORDER_CREATED)"
+        placeholder="Enter Activity Type"
         value={type}
         onChange={e => setType(e.target.value)}
         style={styles.input}
       />
 
       <input
-        placeholder="Entity ID (e.g. order-123)"
+        placeholder="Enter Entity Id"
         value={entityId}
         onChange={e => setEntityId(e.target.value)}
         style={styles.input}

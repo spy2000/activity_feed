@@ -1,4 +1,7 @@
 export type ActivityMetadata = Record<string, unknown>;
+import { baseUrl } from "../config";
+// const baseUrl = "http://localhost:5000/api"
+
 
 export interface Activity {
   _id: string;
@@ -34,7 +37,7 @@ export async function fetchActivities(
   }
 
   const res = await fetch(
-    `http://localhost:5000/api/activities?${params.toString()}`
+    `${baseUrl}/api/activities?${params.toString()}`
   );
 
   if (!res.ok) throw new Error("Fetch failed");
@@ -43,7 +46,7 @@ export async function fetchActivities(
 }
 
 export async function createActivity(payload: CreateActivityPayload) {
-  const res = await fetch("http://localhost:5000/api/activities", {
+  const res = await fetch(`${baseUrl}/api/activities`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload)
