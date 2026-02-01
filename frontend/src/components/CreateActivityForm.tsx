@@ -4,7 +4,7 @@ import type { Activity } from "../api/activitiesApi";
 
 interface Props {
   onOptimisticAdd: (activity: Activity) => void;
-  onReplaceOptimistic: (tempId: string, real: Activity) => void;
+  onReplaceOptimistic: (real: Activity) => void;
   onRollback: (tempId: string) => void;
   onClose: () => void;
 }
@@ -48,7 +48,7 @@ export default function CreateActivityForm({
         clientId
       });
 
-      onReplaceOptimistic(tempId, real);
+      onReplaceOptimistic( real);
       onClose();
       setType("");
       setEntityId("");

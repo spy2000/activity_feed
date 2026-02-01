@@ -14,7 +14,7 @@ export default function CreateActivityModal({ setActivities }: Props) {
   };
 
   // ✅ Replace by clientId (not temp _id)
-  const handleReplaceOptimistic = (tempId: string, real: Activity) => {
+  const handleReplaceOptimistic = (real: Activity) => {
     setActivities(prev =>
       prev.map(a =>
         a.clientId && real.clientId && a.clientId === real.clientId
